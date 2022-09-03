@@ -1,33 +1,25 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import style from './Navigation.module.css';
 import { authSelectors } from 'redux/auth';
+import { Box, Typography } from '@mui/material';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    <nav>
+    <Box as="nav" display="flex">
       <NavLink
         to="/"
-        className={({ isActive }) =>
-          isActive ? `${style.activeLink}` : `${style.link}`
-        }
       >
-        Main
+       <Typography sx={{ p: 2, display: 'block', color: 'red', fontWeight: 700, }}>Main</Typography>
       </NavLink>
 
       {isLoggedIn && (
         <NavLink
-          to="/contacts"
-          className={({ isActive }) =>
-            isActive ? `${style.activeLink}` : `${style.link}`
-          }
-        >
-          Contacts
+          to="/contacts" >
+           <Typography sx={{ p: 2, display: 'block', fontWeight: 700, }}>Contacts</Typography>
         </NavLink>
       )}
-    </nav>
+    </Box>
   );
 };
 

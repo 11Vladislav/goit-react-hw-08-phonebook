@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
-import s from './ContactList.module.css';
 import {Button } from '@mui/material';
+import {ListItem, Text} from './Contact.styled'
 
 const ContactItem = ({ contact, onDelete }) => {
   const { id, name, number } = contact;
   return (
-    <li className={s.list__item}>
-      <p className={s.text}>{name}</p>
-      <p className={s.text}>{number}</p>
+    <ListItem>
+      <Text>{name}</Text>
+      <Text>{number}</Text>
       <Button variant="contained"
-        className={s.button}
         type="button"
         id={id}
         onClick={e => {
@@ -18,7 +17,7 @@ const ContactItem = ({ contact, onDelete }) => {
       >
         Delete
       </Button>
-    </li>
+    </ListItem>
   );
 };
 

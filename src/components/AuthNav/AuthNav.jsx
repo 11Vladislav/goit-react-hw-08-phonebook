@@ -1,25 +1,16 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-import style from './AuthNav.module.css';
+import { Typography } from '@mui/material';
 
 export const AuthNav= () => {
   return (
     <div>
       <NavLink
-        to="/register"
-        className={({ isActive }) =>
-          isActive ? `${style.activeLink}` : `${style.link}`
-        }
-      >
-        Registration
+        to="/register">
+        <Typography sx={{ p: 2, display: 'block' }}>Register</Typography>
       </NavLink>
       <NavLink
-        to="/login"
-        className={({ isActive }) =>
-          isActive ? `${style.activeLink}` : `${style.link}`
-        }
-      >
-        Login
+        to="/login">
+       <Typography sx={{ p: 2, display: 'block' }}>Login</Typography>
       </NavLink>
     </div>
   );
