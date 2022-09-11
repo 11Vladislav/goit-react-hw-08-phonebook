@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from 'redux/contacts/contacts-operations';
 import { getContacts } from 'redux/contacts/contacts-selectors';
 import { Box, TextField, Button, Container } from '@mui/material';
-
+import toast from 'react-hot-toast';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -31,13 +31,20 @@ function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     const contactExist = contacts.find(contact => contact.name === name);
-    if (!contactExist) {
+    if (contactExist){
+    toast.error(`${name} is already in contacts`);
+  }
+  else{
       dispatch(contactsOperations.addContact({ name, number }));
-      setName('');
-      setNumber('');
-    } else {
-      alert(`${name} is already in contacts`);
-    }
+      reset();
+      toast.success(`${name} added successfully!`)
+  };
+  }
+
+
+  const reset = () => {
+    setName('');
+    setNumber('');
   };
 
   return (

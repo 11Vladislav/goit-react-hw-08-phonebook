@@ -10,7 +10,7 @@ import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
 import { PublicRoute } from 'components/routes/PublicRoute';
-
+import { Toaster } from 'react-hot-toast';
 
 export const App =() => {
   const dispatch = useDispatch();
@@ -54,6 +54,7 @@ export const App =() => {
         />
         <Route path="*" element={<PrivateRoute />} />
       </Routes>
+      <Toaster/>
     </Container>
   );
 }

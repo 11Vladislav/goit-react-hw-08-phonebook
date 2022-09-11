@@ -10,7 +10,7 @@ export const Layout = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <AppBar position="fixed" >
-          <Container maxWidth="xl">
+          <Container maxWidth="x1">
             <Toolbar>
             <Typography
                 variant="h6"

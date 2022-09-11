@@ -27,7 +27,7 @@ export const LoginPage = () => {
   };
 
   return (
-      <Container sx={{ mt: '1rem' }}>
+      <Container sx={{ mt: '5rem' }}>
       <Box
         component="form"
         sx={{

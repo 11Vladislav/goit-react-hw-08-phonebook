@@ -31,7 +31,7 @@ export const RegisterPage = () => {
   };
 
   return (
-<Container>
+<Container sx={{ mt: '5rem' }}>
       <Box
         component="form"
         sx={{
