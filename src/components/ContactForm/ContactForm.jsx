@@ -36,16 +36,12 @@ function ContactForm() {
   }
   else{
       dispatch(contactsOperations.addContact({ name, number }));
-      reset();
+      e.currentTarget.value = '';
+      e.currentTarget.name = '';
       toast.success(`${name} added successfully!`)
   };
   }
 
-
-  const reset = () => {
-    setName('');
-    setNumber('');
-  };
 
   return (
 <Container>
@@ -54,7 +50,7 @@ function ContactForm() {
         sx={{
           '& > :not(style)': {
             display: 'flex',
-            m: 10,
+            m: 11,
             width: '35ch',
           },
         }}
