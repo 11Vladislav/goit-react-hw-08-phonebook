@@ -18,4 +18,3 @@ export const Text = styled.p`
     padding: 10px;
     flex-basis: calc(100% / 3);
 `;
-
